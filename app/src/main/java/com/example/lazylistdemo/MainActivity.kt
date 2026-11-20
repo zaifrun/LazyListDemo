@@ -64,7 +64,7 @@ fun ImageLoader(item: String, modifier: Modifier = Modifier) {
     Image(
         painter = rememberAsyncImagePainter(url),
         contentDescription = "car image",
-        contentScale = ContentScale.Fit,
+        contentScale = ContentScale.Fit, //flere muligheder her man kan lege med.
         modifier = modifier
     )
 }
@@ -114,6 +114,8 @@ fun ListPane(
     }
 
     LazyColumn(modifier) {
+        //itererer over hver item, i dette tilfælde en string, i listen
+        //og laver en ny composable her.
         items(carList) { model ->
             CarListItem(model, onItemClick = onListItemClick)
         }
